@@ -1,0 +1,385 @@
+.vision {
+  background: var(--background);
+}
+
+/* Vision Statement */
+.vision-statement {
+  margin-bottom: 4rem;
+}
+
+.statement-card {
+  padding: 3rem;
+  text-align: center;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.statement-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+  animation: float 20s ease-in-out infinite;
+}
+
+.statement-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.statement-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.statement-text {
+  font-size: 1.125rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.statement-text:last-child {
+  margin-bottom: 0;
+}
+
+.statement-text strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Vision Points */
+.vision-points {
+  margin-bottom: 4rem;
+}
+
+.vision-point {
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.vision-point:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--shadow);
+}
+
+.point-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.vision-point:hover .point-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.point-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.point-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Goals Section */
+.goals-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.goals-category {
+  width: 100%;
+}
+
+.goals-card {
+  padding: 2.5rem;
+  height: 100%;
+  background: var(--surface);
+  border-left: 4px solid var(--primary);
+}
+
+.goals-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.goals-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradient);
+}
+
+.goals-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.goal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--background);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.goal-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.goal-check {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--gradient);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.goal-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  padding-top: 0.25rem;
+}
+
+/* Quote Section */
+.quote-section {
+  margin-bottom: 4rem;
+}
+
+.quote-card {
+  background: var(--gradient);
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.quote-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 25s ease-in-out infinite;
+}
+
+.quote-icon {
+  font-size: 6rem;
+  font-family: Georgia, serif;
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-author {
+  font-size: 1.25rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA Section */
+.vision-cta {
+  text-align: center;
+}
+
+.cta-content {
+  background: var(--surface);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.cta-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-content .btn-primary {
+  font-size: 1.125rem;
+  padding: 1rem 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .statement-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .statement-title {
+    font-size: 2.5rem;
+  }
+
+  .statement-text {
+    font-size: 1rem;
+  }
+
+  .goals-section {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-text {
+    font-size: 1.25rem;
+  }
+
+  .cta-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .statement-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .statement-icon {
+    font-size: 3rem;
+  }
+
+  .statement-title {
+    font-size: 2rem;
+  }
+
+  .statement-text {
+    font-size: 0.95rem;
+  }
+
+  .vision-points {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-point {
+    padding: 2rem;
+  }
+
+  .point-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .point-title {
+    font-size: 1.5rem;
+  }
+
+  .goals-card {
+    padding: 2rem;
+  }
+
+  .goals-title {
+    font-size: 1.75rem;
+  }
+
+  .goal-item {
+    padding: 0.875rem;
+  }
+
+  .goal-text {
+    font-size: 0.95rem;
+  }
+
+  .quote-card {
+    padding: 3rem 2rem;
+  }
+
+  .quote-icon {
+    font-size: 4rem;
+  }
+
+  .quote-text {
+    font-size: 1.125rem;
+  }
+
+  .quote-author {
+    font-size: 1.125rem;
+  }
+
+  .cta-content {
+    padding: 2rem;
+  }
+
+  .cta-heading {
+    font-size: 1.75rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+  }
+}
