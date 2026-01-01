@@ -22,8 +22,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <FiInstagram />, link: 'https://instagram.com/bokamoso', label: 'Instagram' },
-    { icon: <FaTiktok />, link: 'https://tiktok.com/@bokamoso', label: 'TikTok' },
+    { icon: <FiInstagram />, link: 'https://www.instagram.com/bokamoso1127?igsh=aHA4dDkzem1tbHhu', label: 'Instagram' },
+    { icon: <FaTiktok />, link: 'https://www.tiktok.com/@rainbow27ghost?_r=1&_t=ZS-92hyWZQZRIO', label: 'TikTok' },
     { icon: <FaFacebook />, link: 'https://facebook.com/bokasyarnmarket', label: 'Facebook' },
     { icon: <FaWhatsapp />, link: 'https://wa.me/27793200067', label: 'WhatsApp' }
   ];

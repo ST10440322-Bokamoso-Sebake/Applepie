@@ -8,14 +8,14 @@ const Achievements = () => {
     {
       icon: <FiAward />,
       title: 'Young Entrepreneur',
-      description: 'Founded Boka\'s Yarn Market at just 14 years old in 2019',
+      description: 'Founded Boka\'s Yarn Market  in 2019',
       year: '2019',
       color: '#8B5CF6'
     },
     {
       icon: <FiTrendingUp />,
       title: 'Growing Business',
-      description: 'Built a thriving customer base across multiple social media platforms',
+      description: 'Building a thriving customer base across multiple social media platforms',
       year: '2019-2024',
       color: '#A78BFA'
     },

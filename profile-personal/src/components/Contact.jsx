@@ -25,8 +25,8 @@ const Contact = () => {
     {
       icon: <FiPhone />,
       title: 'Phone / WhatsApp',
-      value: '079 320 0067',
-      link: 'tel:+27793200067'
+      value: '079 320 0067 / 076 523 5793',
+      link: 'tel:+27793200067 / tel:+27765235793'
     },
     {
       icon: <FiMapPin />,
@@ -40,15 +40,15 @@ const Contact = () => {
     {
       icon: <FiInstagram />,
       name: 'Instagram',
-      handle: '@bokamoso',
-      link: 'https://instagram.com/bokamoso',
+      handle: '@bokasyarnmarket27 / @bokamoso1127',
+      link: 'https://www.instagram.com/bokasyarnmarket27?igsh=M2JiODh0NWRuZ2Q5  / https://www.instagram.com/bokamoso1127?igsh=aHA4dDkzem1tbHhu',
       color: '#E4405F'
     },
     {
       icon: <FaTiktok />,
       name: 'TikTok',
-      handle: '@bokamoso',
-      link: 'https://tiktok.com/@bokamoso',
+      handle: '@bokasyarnmarket / @rainbow27ghost',
+      link: 'https://www.tiktok.com/@bokasyarnmarket?_r=1&_t=ZS-92hyT2P57AN /https://www.tiktok.com/@rainbow27ghost?_r=1&_t=ZS-92hyWZQZRIO',
       color: '#000000'
     },
     {
@@ -128,7 +128,7 @@ const Contact = () => {
         >
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-subtitle">
-            Let's connect! I'm always open to discussing new opportunities, collaborations, or just having a chat.
+            Let's connect! I am always open to discussing new opportunities, collaborations, or just having a chat.
           </p>
         </motion.div>
 

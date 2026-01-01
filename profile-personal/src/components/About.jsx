@@ -8,22 +8,22 @@ const About = () => {
     {
       icon: <FiUser />,
       title: 'Who I Am',
-      description: 'A passionate entrepreneur and Computer Science student at Varsity College Midrand, combining creativity with technology.'
+      description: 'A passionate entrepreneur and Computer Science student, combining vintage creativity with modern technology.'
     },
     {
       icon: <FiBriefcase />,
       title: 'What I Do',
-      description: 'Founder of Boka\'s Yarn Market, specializing in handmade crochet clothing, accessories, and décor with modern fashion aesthetics.'
+      description: 'Founder of Boka\'s Yarn Market, specializing in handmade crochet clothing, accessories, and décor with modern fashion aesthetics. Also pursuing a degree in Computer Science to enhance my technical skills.'
     },
     {
       icon: <FiHeart />,
       title: 'My Passion',
-      description: 'Transforming a childhood hobby into a thriving business, celebrating the art of crochet and the value of handmade products.'
+      description: 'Transforming a childhood hobby into a thriving business, celebrating the art of crochet and the value of handmade products and attempting to mix technology with this type of fashion.'
     },
     {
       icon: <FiTarget />,
       title: 'My Mission',
-      description: 'Building a recognized brand that merges technology with fashion, inspiring young entrepreneurs to pursue their dreams.'
+      description: 'Building a recognizable brand that merges technology with fashion, inspiring young entrepreneurs to pursue their dreams.'
     }
   ];
 
@@ -39,7 +39,7 @@ const About = () => {
         >
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
-            Entrepreneur | Computer Science Student | Creative Innovator
+            Entrepreneur | Computer Science Student | Creative Innovator | Animal Lover
           </p>
         </motion.div>
 
@@ -54,9 +54,9 @@ const About = () => {
             <div className="about-text-card card">
               <h3 className="about-heading gradient-text">My Story</h3>
               <p className="about-paragraph">
-                I'm <strong>Bokamoso Sebake</strong>, the founder of <strong>Boka's Yarn Market</strong>, 
-                a crochet and fashion arts & crafts brand that I started in 2019 at just 14 years old. 
-                What began as a simple hobby has blossomed into a business that celebrates creativity, 
+                I am <strong>Bokamoso Sebake</strong>, the founder of <strong>Boka's Yarn Market</strong>, 
+                a crochet and fashion arts & crafts brand that I started at a young age. 
+                What began as a simple hobby is blooming into a business that celebrates creativity, 
                 uniqueness, and the timeless art of handmade craftsmanship.
               </p>
               <p className="about-paragraph">
@@ -65,14 +65,14 @@ const About = () => {
                 accessories and beautiful décor, every item tells a story of passion and dedication.
               </p>
               <p className="about-paragraph">
-                Currently pursuing Computer Science at Varsity College Midrand, I see a powerful 
-                connection between my love for technology and crochet. Both require patience, 
+                Currently pursuing Computer Science, I see a powerful 
+                connection between my love for technology and crochet fashion. Both require patience, 
                 problem-solving skills, and the ability to build something meaningful from the ground up. 
                 This unique perspective allows me to approach both my studies and business with 
                 innovation and creativity.
               </p>
               <p className="about-paragraph">
-                Through my journey, I've built a growing customer base across Instagram, TikTok, and 
+                Through my journey, I have built a growing customer base across Instagram, TikTok, and 
                 Facebook, while gaining invaluable skills in branding, marketing, and customer service. 
                 Balancing entrepreneurship with my studies has taught me discipline, time management, 
                 and the importance of pursuing your passions with unwavering confidence.
@@ -107,7 +107,7 @@ const About = () => {
         >
           <div className="highlight-card card">
             <div className="highlight-content">
-              <h3 className="highlight-title">Boka's Yarn Market</h3>
+              <h3 className="highlight-title">Boka's Yarn Market {BYM} </h3>
               <p className="highlight-text">
                 A brand built on creativity, quality, and the celebration of handmade excellence. 
                 Every stitch represents dedication, every design tells a story, and every customer 
