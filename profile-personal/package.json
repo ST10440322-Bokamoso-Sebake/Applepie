@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env NODE_OPTIONS=--no-deprecation react-scripts build",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation npx react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "check-email": "node check-email-config.js"
