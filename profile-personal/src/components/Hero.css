@@ -1,0 +1,388 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 8rem 2rem 4rem;
+  overflow: hidden;
+}
+
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  animation: fadeInDown 0.8s ease;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #10B981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--surface);
+  min-width: 200px;
+  box-shadow: 0 8px 16px var(--shadow);
+  border-radius: 12px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  z-index: 1000;
+  animation: fadeInUp 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  color: var(--text-primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.dropdown-content button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Stats */
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+/* Visual Section */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.visual-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  opacity: 0.2;
+}
+
+.circle-1 {
+  width: 400px;
+  height: 400px;
+  animation: rotate 20s linear infinite;
+}
+
+.circle-2 {
+  width: 320px;
+  height: 320px;
+  animation: rotate 15s linear infinite reverse;
+}
+
+.circle-3 {
+  width: 240px;
+  height: 240px;
+  animation: rotate 10s linear infinite;
+}
+
+/* New: Side-by-side images container */
+.hero-images {
+  display: flex;
+  gap: 1rem; /* Space between images */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image {
+  width: 30%; /* Each image takes ~30% of container width for side-by-side */
+  max-width: 200px; /* Prevent images from getting too large */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 24px var(--shadow); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Hover effect */
+  object-fit: cover; /* Ensure images fit nicely */
+}
+
+.hero-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-secondary);
+}
+
+.scroll-icon {
+  font-size: 2rem;
+}
+
+/* Floating Elements */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-element {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: float 8s ease-in-out infinite;
+}
+
+.element-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.element-2 {
+  top: 60%;
+  left: 15%;
+  animation-delay: 1s;
+}
+
+.element-3 {
+  top: 30%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.element-4 {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-visual {
+    order: 1;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  /* Images stack vertically on tablet/mobile */
+  .hero-images {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .circle-1 {
+    width: 320px;
+    height: 320px;
+  }
+
+  .circle-2 {
+    width: 260px;
+    height: 260px;
+  }
+
+  .circle-3 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons button,
+  .dropdown {
+    width: 100%;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .hero-image-placeholder {
+    width: 240px;
+    height: 240px;
+  }
+
+  .placeholder-text {
+    font-size: 1.25rem;
+  }
+}

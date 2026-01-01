@@ -1,0 +1,41 @@
+{
+  "name": "bokamoso-profile",
+  "version": "1.0.0",
+  "description": "Interactive profile for Bokamoso Sebake - Founder of Boka's Yarn Market",
+  "private": true,
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "framer-motion": "^10.16.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "check-email": "node check-email-config.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}

@@ -1,0 +1,189 @@
+.about {
+  background: var(--background);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-main {
+  width: 100%;
+}
+
+.about-text-card {
+  padding: 3rem;
+}
+
+.about-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.about-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.about-paragraph strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.about-cards {
+  margin-top: 2rem;
+}
+
+.about-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px var(--shadow);
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Highlight Section */
+.about-highlight {
+  margin-top: 2rem;
+}
+
+.highlight-card {
+  background: var(--gradient);
+  color: white;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 15s ease-in-out infinite;
+}
+
+.highlight-content {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.highlight-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.highlight-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-text-card {
+    padding: 2rem;
+  }
+
+  .about-heading {
+    font-size: 1.75rem;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .highlight-card {
+    padding: 2rem;
+  }
+
+  .highlight-title {
+    font-size: 2rem;
+  }
+
+  .highlight-text {
+    font-size: 1rem;
+  }
+
+  .highlight-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
