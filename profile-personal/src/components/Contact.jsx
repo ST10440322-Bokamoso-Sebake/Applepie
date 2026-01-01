@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiInstagram, FiSend, FiCheck } from 'react-icons/fi';
 import { FaFacebook, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -79,17 +79,28 @@ const Contact = () => {
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
 
-    // EmailJS configuration (you'll need to set up your own EmailJS account)
-    // For now, this is a placeholder that simulates sending
+    // EmailJS configuration
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    // Check if EmailJS is configured
+    if (!serviceId || !templateId || !publicKey || 
+        serviceId === 'your_service_id_here' || 
+        templateId === 'your_template_id_here' || 
+        publicKey === 'your_public_key_here') {
+      setStatus({
+        type: 'error',
+        message: 'Email service is not configured. Please contact me directly at rainbow11272005@gmail.com'
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Uncomment and configure when you set up EmailJS:
-      /*
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        serviceId,
+        templateId,
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -97,9 +108,8 @@ const Contact = () => {
           message: formData.message,
           to_email: 'rainbow11272005@gmail.com'
         },
-        'YOUR_PUBLIC_KEY'
+        publicKey
       );
-      */
 
       setStatus({
         type: 'success',
@@ -107,6 +117,7 @@ const Contact = () => {
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error('EmailJS error:', error);
       setStatus({
         type: 'error',
         message: 'Oops! Something went wrong. Please try again or contact me directly via email.'

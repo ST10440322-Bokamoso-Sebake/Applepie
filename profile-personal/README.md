@@ -29,21 +29,29 @@ A modern, interactive portfolio website for Bokamoso Sebake, showcasing her jour
 
 ### Installation
 
-1. **Install Dependencies**
+1. **Clone the repository** (or download and extract)
+
+2. **Install Dependencies**
    ```bash
    npm install
    ```
 
-2. **Start Development Server**
+3. **Set up Environment Variables** (for contact form)
+   - Create a `.env.local` file in the root directory
+   - See `EMAILJS_SETUP.md` for detailed instructions
+   - This step is optional if you don't need the contact form functionality
+
+4. **Start Development Server**
    ```bash
    npm start
    ```
    The site will open at `http://localhost:3000`
 
-3. **Build for Production**
+5. **Build for Production**
    ```bash
    npm run build
    ```
+   Creates an optimized production build in the `build` folder
 
 ## 📝 Customization Guide
 
@@ -89,25 +97,26 @@ Replace placeholder links with your actual profiles:
 
 To enable the contact form to send emails:
 
-1. Sign up for [EmailJS](https://www.emailjs.com/)
-2. Create an email service and template
-3. Get your Service ID, Template ID, and Public Key
-4. Update `src/components/Contact.jsx`:
+1. **Create an `.env.local` file** in the root directory (if it doesn't exist)
+2. **Set up EmailJS**:
+   - Sign up for [EmailJS](https://www.emailjs.com/) (free plan includes 200 emails/month)
+   - Create an email service (connect your Gmail account)
+   - Create an email template
+   - Get your Service ID, Template ID, and Public Key
 
-```javascript
-await emailjs.send(
-  'YOUR_SERVICE_ID',      // Replace with your Service ID
-  'YOUR_TEMPLATE_ID',     // Replace with your Template ID
-  {
-    from_name: formData.name,
-    from_email: formData.email,
-    subject: formData.subject,
-    message: formData.message,
-    to_email: 'your-email@example.com'
-  },
-  'YOUR_PUBLIC_KEY'       // Replace with your Public Key
-);
-```
+3. **Update `.env.local`** with your EmailJS credentials:
+   ```env
+   REACT_APP_EMAILJS_SERVICE_ID=your_service_id_here
+   REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id_here
+   REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key_here
+   ```
+
+4. **For detailed setup instructions**, see `EMAILJS_SETUP.md` in the project root.
+
+**Note:** 
+- The `.env.local` file is already in `.gitignore` and won't be committed to Git
+- After updating `.env.local`, restart your development server (`npm start`)
+- The contact form will show a helpful error message if EmailJS is not configured
 
 ### 5. Color Customization
 
@@ -168,10 +177,10 @@ The site is fully responsive with breakpoints at:
 ## 🔧 Technologies Used
 
 - **React** - UI library
-- **Framer Motion** - Animations
+- **Framer Motion** - Animations and transitions
 - **React Icons** - Icon library
-- **EmailJS** - Contact form functionality
-- **CSS3** - Styling with CSS variables
+- **@emailjs/browser** - Contact form email functionality
+- **CSS3** - Styling with CSS variables and modern features
 - **HTML5** - Semantic markup
 
 ## 📦 Project Structure
@@ -202,7 +211,9 @@ profile-personal/
 │   ├── index.js
 │   └── index.css
 ├── package.json
-└── README.md
+├── README.md
+├── EMAILJS_SETUP.md
+└── .env.local (create this file for EmailJS configuration)
 ```
 
 ## 🚀 Deployment
@@ -212,12 +223,21 @@ profile-personal/
 1. Push your code to GitHub
 2. Go to [Vercel](https://vercel.com)
 3. Import your repository
-4. Deploy!
+4. **Add Environment Variables** (if using contact form):
+   - Go to Project Settings → Environment Variables
+   - Add: `REACT_APP_EMAILJS_SERVICE_ID`, `REACT_APP_EMAILJS_TEMPLATE_ID`, `REACT_APP_EMAILJS_PUBLIC_KEY`
+   - Use the same values from your `.env.local` file
+5. Deploy!
 
 ### Deploy to Netlify
 
 1. Build the project: `npm run build`
 2. Drag and drop the `build` folder to [Netlify](https://netlify.com)
+3. **Add Environment Variables** (if using contact form):
+   - Go to Site Settings → Environment Variables
+   - Add: `REACT_APP_EMAILJS_SERVICE_ID`, `REACT_APP_EMAILJS_TEMPLATE_ID`, `REACT_APP_EMAILJS_PUBLIC_KEY`
+   - Use the same values from your `.env.local` file
+   - Rebuild the site after adding variables
 
 ### Deploy to GitHub Pages
 

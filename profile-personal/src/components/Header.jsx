@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
-import bannerLogo from './assets/images/bokas-yarn-market-banner.png';  // Banner logo image path
-import iconLogo from './assets/images/bokas-yarn-market-icon.png';      // Icon logo image path
+import bannerLogo from '../assets/images/bokas-yarn-market-banner.png.jpeg';
+import iconLogo from '../assets/images/boka-yarn-market-icon.png.jpeg';
 import './Header.css';
 
 const Header = ({ theme, toggleTheme }) => {
@@ -46,84 +46,95 @@ const Header = ({ theme, toggleTheme }) => {
   };
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="header-container">
-        <div className="logo">
-          {/* Banner logo visible on desktop */}
-          <img src={bannerLogo} alt="Boka's Yarn Market" className="logo-banner" />
-          {/* Icon logo visible on mobile */}
-          <img src={iconLogo} alt="Boka's Yarn Market Icon" className="logo-icon" />
-        </div>
+    <>
+      <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="header-container">
+          <div className="logo">
+            {/* Banner logo visible on desktop */}
+            <img src={bannerLogo} alt="Boka's Yarn Market" className="logo-banner" />
+            {/* Icon logo visible on mobile */}
+            <img src={iconLogo} alt="Boka's Yarn Market Icon" className="logo-icon" />
+          </div>
 
-        {/* Desktop nav - hidden on mobile */}
-        <nav className="nav">
-          {navItems.map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              className="nav-link"
-              onClick={(e) => handleNavClick(e, item.href)}
+          {/* Desktop nav - hidden on mobile */}
+          <nav className="nav">
+            {navItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="nav-link"
+                onClick={(e) => handleNavClick(e, item.href)}
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+
+          <div className="header-actions">
+            {/* Theme toggle button */}
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
             >
-              {item.name}
-            </a>
-          ))}
-        </nav>
+              {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
+            </button>
 
-        <div className="header-actions">
-          {/* Theme toggle button */}
-          <button
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
-          </button>
-
-          {/* Mobile menu toggle button */}
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
+            {/* Mobile menu toggle button */}
+            <button
+              className="mobile-menu-toggle"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      {/* Side Menu Popup (Sidebar) */}
-      <div className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
-        <div className="sidebar-header">
-          <button
-            className="sidebar-close"
+      {/* Sidebar Overlay and Menu (only rendered when open) */}
+      {isMobileMenuOpen && (
+        <>
+          <div
+            className="sidebar-overlay"
             onClick={() => setIsMobileMenuOpen(false)}
             aria-label="Close menu"
-          >
-            <FiX size={24} />
-          </button>
-          {/* Optional secondary theme toggle in sidebar */}
-          <button
-            className="theme-toggle sidebar-theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
-          </button>
-        </div>
+          ></div>
+          <div className="sidebar">
+            <div className="sidebar-header">
+              <button
+                className="sidebar-close"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <FiX size={24} />
+              </button>
+              {/* Optional secondary theme toggle in sidebar */}
+              <button
+                className="theme-toggle sidebar-theme-toggle"
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+              >
+                {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
+              </button>
+            </div>
 
-        <nav className="sidebar-nav">
-          {navItems.map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              className="sidebar-nav-link"
-              onClick={(e) => handleNavClick(e, item.href)}
-            >
-              {item.name}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </header>
+            <nav className="sidebar-nav">
+              {navItems.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  className="sidebar-nav-link"
+                  onClick={(e) => handleNavClick(e, item.href)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

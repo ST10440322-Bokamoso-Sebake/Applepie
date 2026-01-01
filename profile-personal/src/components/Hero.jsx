@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { FiDownload, FiMail, FiArrowDown } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import heroImage1 from '../assets/images/hero-image1.jpg.jpeg';
+import heroImage2 from '../assets/images/hero-image2.jpg.jpeg';
+import heroImage3 from '../assets/images/hero-image3.jpg.jpeg';
 import './Hero.css';
 
 const Hero = () => {
@@ -72,6 +75,7 @@ const Hero = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
   const handleDownload = (type) => {
     // This will download the placeholder PDFs from the public folder
     const link = document.createElement('a');
@@ -198,11 +202,11 @@ const Hero = () => {
           <div className="visual-circle circle-1"></div>
           <div className="visual-circle circle-2"></div>
           <div className="visual-circle circle-3"></div>
-          <div className="hero-image-placeholder">
-            <div className="placeholder-content">
-              <span className="placeholder-text">Your Photo Here</span>
-              <p className="placeholder-hint">Add your professional photo</p>
-            </div>
+          {/* Replaced placeholder with side-by-side images */}
+          <div className="hero-images">
+            <img src={heroImage1} alt="Bokamoso Sebake - Professional 1" className="hero-image" />
+            <img src={heroImage2} alt="Bokamoso Sebake - Professional 2" className="hero-image" />
+            <img src={heroImage3} alt="Bokamoso Sebake - Professional 3" className="hero-image" />
           </div>
         </motion.div>
       </div>

@@ -29,19 +29,18 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: 'Playfair Display', serif;
+  display: flex;
+  align-items: center;
 }
 
-.logo-text {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  display: inline-block;
+.logo-banner {
+  height: 40px; /* Adjust as needed */
+  display: block;
 }
 
-.logo-text:hover {
-  transform: scale(1.05);
+.logo-icon {
+  height: 30px; /* Adjust as needed */
+  display: none;
 }
 
 .nav {
@@ -111,9 +110,8 @@
   padding: 0.5rem;
 }
 
-/* Mobile Menu */
-.mobile-menu-overlay {
-  display: none;
+/* Sidebar Overlay */
+.sidebar-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -124,7 +122,17 @@
   animation: fadeIn 0.3s ease;
 }
 
-.mobile-menu {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Sidebar */
+.sidebar {
   position: fixed;
   top: 0;
   right: 0;
@@ -137,6 +145,7 @@
   gap: 1.5rem;
   animation: slideInRight 0.3s ease;
   box-shadow: -5px 0 20px var(--shadow);
+  z-index: 1000;
 }
 
 @keyframes slideInRight {
@@ -148,16 +157,40 @@
   }
 }
 
-.mobile-nav-link {
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar-close {
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-nav-link {
   color: var(--text-primary);
   font-weight: 500;
   font-size: 1.1rem;
   padding: 0.75rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.mobile-nav-link:hover {
+.sidebar-nav-link:hover {
   background: var(--primary);
   color: white;
   transform: translateX(5px);
@@ -173,21 +206,22 @@
     display: block;
   }
 
-  .mobile-menu-overlay {
-    display: block;
-  }
-
   .header-container {
     padding: 0 1rem;
   }
 
-  .logo {
-    font-size: 1.25rem;
+  .logo-banner {
+    display: none;
+  }
+
+  .logo-icon {
+    display: block;
   }
 }
 
 @media (min-width: 769px) {
-  .mobile-menu-overlay {
+  .sidebar-overlay,
+  .sidebar {
     display: none !important;
   }
 }

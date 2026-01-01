@@ -107,7 +107,7 @@ const About = () => {
         >
           <div className="highlight-card card">
             <div className="highlight-content">
-              <h3 className="highlight-title">Boka's Yarn Market {BYM} </h3>
+              <h3 className="highlight-title">Boka's Yarn Market</h3>
               <p className="highlight-text">
                 A brand built on creativity, quality, and the celebration of handmade excellence. 
                 Every stitch represents dedication, every design tells a story, and every customer 
